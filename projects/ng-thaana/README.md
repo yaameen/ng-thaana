@@ -10,8 +10,6 @@ ngThaana is a port of [v-thaana](https://www.npmjs.com/package/v-thaana) for ang
 # Features!
 
   - Converts text to thaana (unicode)
-  - 
-
 
 ### Installation
 
@@ -20,7 +18,7 @@ ngThaana requires nothing in particular as a dependancy.
 Install the dependencies and devDependencies and start the server.
 
 ```sh
-$ npm -i ng-thaana
+$ npm i ng-thaana
 ```
 
 ### Usage
