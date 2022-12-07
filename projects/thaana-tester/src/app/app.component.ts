@@ -11,7 +11,10 @@ export class AppComponent {
   name!: string
 
   postCallback(e: any) {
-    console.log('You typed: ', e);
-    
+    console.log('You typed: ', e); 
+  }
+  
+  toggled(e: any) {
+    console.log('You typed: ', e); 
   }
 }

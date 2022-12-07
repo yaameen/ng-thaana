@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-import {  NgThaanaModule } from 'ng-thaana';
+import {  NgThaanaModule } from '../../../ng-thaana/src/lib/ng-thaana.module';
 
 import { AppComponent } from './app.component';
 

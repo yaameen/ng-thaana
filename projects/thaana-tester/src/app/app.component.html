@@ -3,6 +3,6 @@
   <input [(ngModel)]='name' ng-thaana placeholder="Search..." />
   
   <!-- With post callback -->
-  <input [(ngModel)]='name' (ng-thaana)='postCallback($event)' placeholder="Search..." />
+  <input [(ngModel)]='name' (thaana-toggled)="toggled($event)" (ng-thaana)='postCallback($event)' placeholder="Search..." />
 
 </div>
