@@ -8,13 +8,20 @@ import  Thaana from './thaana'
 export class NgThaanaDirective {
 
   @Output('ng-thaana') ngThaana = new EventEmitter<string>();
+  @Output('thaana-toggled') thaanaToggled = new EventEmitter<string>();
 
   constructor(el: ElementRef) {
     el.nativeElement.style.direction = 'rtl'
 
+    el.nativeElement.addEventListener('thaana-toggled', (e: CustomEvent) => {
+      this.thaanaToggled.emit(e.detail)
+    })
+
     Thaana(el.nativeElement, (e: any) => {
         this.ngThaana.emit(e)
     })
+
+    
     
  }
 
