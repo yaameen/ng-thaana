@@ -1,28 +1,28 @@
-import { EventEmitter } from '@angular/core';
+import { AfterViewInit, EventEmitter } from '@angular/core';
 import {  Directive, ElementRef, Input, Output} from '@angular/core';
-import  Thaana from './thaana'
+
+import  Thaana from 'dhivehi'
+
+
+export type Flavor = 'phonetic' | 'typewriter' | 'faseyha'
 
 @Directive({
   selector: '[ng-thaana]',
 })
-export class NgThaanaDirective {
+export class NgThaanaDirective implements AfterViewInit {
 
+  @Input('flavor') flavor: Flavor = 'phonetic';
   @Output('ng-thaana') ngThaana = new EventEmitter<string>();
   @Output('thaana-toggled') thaanaToggled = new EventEmitter<string>();
 
-  constructor(el: ElementRef) {
-    el.nativeElement.style.direction = 'rtl'
+  constructor(private el: ElementRef) {}
 
-    el.nativeElement.addEventListener('thaana-toggled', (e: CustomEvent) => {
+  ngAfterViewInit(): void {
+    this.el.nativeElement.style.direction = 'rtl'
+    this.el.nativeElement.addEventListener('thaana-toggled', (e: CustomEvent) => {
       this.thaanaToggled.emit(e.detail)
     })
-
-    Thaana(el.nativeElement, (e: any) => {
-        this.ngThaana.emit(e)
-    })
-
-    
-    
- }
+    Thaana(this.el.nativeElement, { flavor: this.flavor })
+  }
 
 }
