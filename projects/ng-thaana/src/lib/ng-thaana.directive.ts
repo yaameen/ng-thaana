@@ -8,6 +8,7 @@ export type Flavor = 'phonetic' | 'typewriter' | 'faseyha'
 
 @Directive({
   selector: '[ng-thaana]',
+  standalone: false
 })
 export class NgThaanaDirective implements AfterViewInit {
 
