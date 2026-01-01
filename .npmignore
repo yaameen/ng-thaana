@@ -1,0 +1,15 @@
+# Source files - only publish from dist/ng-thaana
+/projects
+/node_modules
+/.angular
+/.git
+/.vscode
+/src
+angular.json
+tsconfig.json
+.editorconfig
+.gitignore
+package-lock.json
+karma.conf.js
+*.md
+!dist/**
